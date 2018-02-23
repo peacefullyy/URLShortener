@@ -63,6 +63,17 @@ app.get('/url/:longUrl', function(req, res){
 
 });
 
+app.get('/a/ll', function(req, res){
+
+    var print= Urls.find(function(err, doc){
+
+        if(err) return res.status(500).send({error: err});
+
+        res.json({data:doc});
+
+    })
+
+});
 
 app.listen(3000, function(){
 
